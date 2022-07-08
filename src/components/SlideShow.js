@@ -30,7 +30,7 @@ function SlideShow() {
   };
 
   const onTouchEnd = () => {
-    startPosition - currentPosition > 0 ? prev() : next();
+    startPosition - currentPosition < 0 ? prev() : next();
   };
 
   return (
