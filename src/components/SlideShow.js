@@ -15,7 +15,6 @@ function SlideShow() {
 
   const next = () => {
     index === images.length - 1 ? setIndex(0) : setIndex(index + 1);
-    setIndex(index + 1);
   };
 
   const prev = () => {
