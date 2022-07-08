@@ -15,7 +15,7 @@ If you want a copy of this file go to the github repository and download it from
 
 ### Live
 
-[LiveDemo](https://github.com/medaminedev66/swiper-react)
+[LiveDemo](https://medaminedev66.github.io/swiper-react/)
 
 ### Setup
 
