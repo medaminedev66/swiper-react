@@ -9,9 +9,7 @@
 
 ## Getting Started
 
-If you want a copy of this file go to the github repository and download it from there
-
-- [Swiper React](https://github.com/medaminedev66/swiper-react)
+This project was bootstrapped with Create React App.
 
 ### Live
 
@@ -63,7 +61,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Uran for giving me this assignment
+- Master WiZR for giving me this assignment
 
 =======
 
