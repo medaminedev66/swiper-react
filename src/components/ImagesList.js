@@ -6,13 +6,16 @@ function ImagesList(props) {
   return (
     <div className="images-list">
       {imgs.map((image, indx) => (
-        <img
-          key={image.id}
-          src={image.thumbnailUrl}
-          onClick={() => setImage(indx)}
-          className={indx === index ? 'active' : 'inactive'}
-          alt=""
-        />
+        <div className="image-icon">
+          <img
+            key={image.id}
+            src={image.thumbnailUrl}
+            onClick={() => setImage(indx)}
+            className={indx === index ? 'active' : 'inactive'}
+            alt={image.title}
+          />
+          <p>{image.title.split(' ')[0]}</p>
+        </div>
       ))}
     </div>
   );

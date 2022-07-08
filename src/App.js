@@ -3,8 +3,8 @@ import SlideShow from './components/SlideShow';
 
 function App() {
   return (
-    <div className='container'>
-      <h1>Slide show</h1>
+    <div className="container">
+      <h1>Master WiZR interview task</h1>
       <SlideShow />
     </div>
   );

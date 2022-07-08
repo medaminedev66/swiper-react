@@ -3,21 +3,15 @@ import ImagesList from './ImagesList';
 
 function SlideShow() {
   const [index, setIndex] = useState(0);
-  const [images, setImages] = useState([
-    {
-      albumId: 1,
-      id: 1,
-      title: 'accusamus beatae ad facilis cum similique qui sunt',
-      url: 'https://via.placeholder.com/600/92c952',
-      thumbnailUrl: 'https://via.placeholder.com/150/92c952',
-    },
-  ]);
+  const [startPosition, setStartPosition] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [images, setImages] = useState([]);
+  // const [visible, setVisible] = useSate(1);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/photos')
       .then((res) => res.json())
-      .then((data) => setImages(data.slice(0,6)));
-    console.log(images);
+      .then((data) => setImages(data.slice(0, 6)));
   }, []);
 
   const next = () => {
@@ -28,15 +22,43 @@ function SlideShow() {
     index === 0 ? setIndex(images.length - 1) : setIndex(index - 1);
   };
 
+  const onTouchStart = (e) => {
+    setStartPosition(e.changedTouches[0].pageX);
+  };
+
+  const onTouchMove = (e) => {
+    setCurrentPosition(e.changedTouches[0].pageX);
+  };
+
+  const onTouchEnd = (e) => {
+    startPosition - currentPosition > 0 ? prev() : next();
+  };
+
   return (
-    <>
+    <div className="slide-show">
       <ImagesList imgs={images} setImage={setIndex} index={index} />
-      <div className="slide-images">
-        <button onClick={prev}>prev</button>
-        <img className="image" src={images[index].url} alt="" />
-        <button onClick={next}>next</button>
+      <div className="slide-container">
+        <button className="action-btn" onClick={prev}>
+          prev
+        </button>
+        <div className="image-container">
+          {images.map((image, ind) => (
+              <img
+                key={`slider-${image.id}`}
+                className={`image ${ind === index ? 'shown' : 'hidden'}`}
+                src={image.url}
+                alt={image.title}
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+              />
+            ))}
+        </div>
+        <button className="action-btn" onClick={next}>
+          next
+        </button>
       </div>
-    </>
+    </div>
   );
 }
 
