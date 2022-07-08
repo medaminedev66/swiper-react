@@ -1,6 +1,6 @@
 {
-  "name": "slide-practice",
-  "homepage": "https://github.com/medaminedev66/swiper-react",
+  "homepage": "https://medaminedev66.github.io/swiper-react/",
+  "name": "swiper-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

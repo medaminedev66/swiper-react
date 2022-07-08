@@ -5,9 +5,9 @@ function ImagesList(props) {
   const { imgs, setImage, index } = props;
 
   return (
-    <div className="images-list">
+    <ul className="images-list">
       {imgs.map((image, indx) => (  
-        <div key={image.id} className="image-icon">
+        <li key={image.id} className="image-icon">
           <img
             src={image.thumbnailUrl}
             onClick={() => setImage(indx)}
@@ -15,9 +15,9 @@ function ImagesList(props) {
             alt={image.title}
           />
           <p>{image.title.split(' ')[0]}</p>
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }
 

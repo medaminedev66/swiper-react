@@ -4,7 +4,7 @@ import SlideShow from './components/SlideShow';
 function App() {
   return (
     <div className="container">
-      <h1>Master WiZR interview task</h1>
+      <h1>Master WiZR - Swiper App</h1>
       <SlideShow />
     </div>
   );
