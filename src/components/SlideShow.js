@@ -6,7 +6,6 @@ function SlideShow() {
   const [startPosition, setStartPosition] = useState(0);
   const [currentPosition, setCurrentPosition] = useState(0);
   const [images, setImages] = useState([]);
-  // const [visible, setVisible] = useSate(1);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/photos')
@@ -16,6 +15,7 @@ function SlideShow() {
 
   const next = () => {
     index === images.length - 1 ? setIndex(0) : setIndex(index + 1);
+    setIndex(index + 1);
   };
 
   const prev = () => {
@@ -30,7 +30,7 @@ function SlideShow() {
     setCurrentPosition(e.changedTouches[0].pageX);
   };
 
-  const onTouchEnd = (e) => {
+  const onTouchEnd = () => {
     startPosition - currentPosition > 0 ? prev() : next();
   };
 
@@ -38,7 +38,7 @@ function SlideShow() {
     <div className="slide-show">
       <ImagesList imgs={images} setImage={setIndex} index={index} />
       <div className="slide-container">
-        <button className="action-btn" onClick={prev}>
+        <button type="button" className="action-btn" onClick={prev}>
           prev
         </button>
         <div className="image-container">
@@ -54,7 +54,7 @@ function SlideShow() {
               />
             ))}
         </div>
-        <button className="action-btn" onClick={next}>
+        <button type="button" className="action-btn" onClick={next}>
           next
         </button>
       </div>
