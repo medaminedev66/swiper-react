@@ -63,21 +63,23 @@
 
 .hidden {
   display: none;
+  animation: slide 1s reverse;
 }
 
 .image-container {
   display: flex;
   align-items: center;
+  // max-width: 600px;
 }
 
-@keyframes slide {
-  0% {
-    transform: translateX(-600px) ;
-  }
-  100% {
-    transform: translateX(0) ;
-  }
-}
+// @keyframes slide {
+//   0% {
+//     transform: translateX(-600px) ;
+//   }
+//   100% {
+//     transform: translateX(0) ;
+//   }
+// }
 
 @media screen and (max-width: 1024px){
   .slide-show {
