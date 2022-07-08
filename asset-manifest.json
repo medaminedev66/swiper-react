@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/medaminedev66/swiper-react/static/css/main.6310780b.css",
+    "main.js": "/medaminedev66/swiper-react/static/js/main.5040abd2.js",
+    "index.html": "/medaminedev66/swiper-react/index.html",
+    "main.6310780b.css.map": "/medaminedev66/swiper-react/static/css/main.6310780b.css.map",
+    "main.5040abd2.js.map": "/medaminedev66/swiper-react/static/js/main.5040abd2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6310780b.css",
+    "static/js/main.5040abd2.js"
+  ]
+}
