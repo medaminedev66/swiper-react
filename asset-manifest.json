@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/swiper-react/static/css/main.0fb7425e.css",
-    "main.js": "/swiper-react/static/js/main.73b5c6ab.js",
+    "main.css": "/swiper-react/static/css/main.045d9c88.css",
+    "main.js": "/swiper-react/static/js/main.0b1d828c.js",
     "index.html": "/swiper-react/index.html",
-    "main.0fb7425e.css.map": "/swiper-react/static/css/main.0fb7425e.css.map",
-    "main.73b5c6ab.js.map": "/swiper-react/static/js/main.73b5c6ab.js.map"
+    "main.045d9c88.css.map": "/swiper-react/static/css/main.045d9c88.css.map",
+    "main.0b1d828c.js.map": "/swiper-react/static/js/main.0b1d828c.js.map"
   },
   "entrypoints": [
-    "static/css/main.0fb7425e.css",
-    "static/js/main.73b5c6ab.js"
+    "static/css/main.045d9c88.css",
+    "static/js/main.0b1d828c.js"
   ]
 }
