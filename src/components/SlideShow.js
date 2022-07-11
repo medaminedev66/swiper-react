@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import ImagesList from './ImagesList';
 
 function SlideShow() {
-  const [index, setIndex] = useState(0);
   const [startPosition, setStartPosition] = useState(0);
   const [currentPosition, setCurrentPosition] = useState(0);
   const [images, setImages] = useState([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/photos')
@@ -14,11 +14,15 @@ function SlideShow() {
   }, []);
 
   const next = () => {
-    index === images.length - 1 ? setIndex(0) : setIndex(index + 1);
+    currentSlide === images.length - 1
+      ? setCurrentSlide(0)
+      : setCurrentSlide(currentSlide + 1);
   };
 
   const prev = () => {
-    index === 0 ? setIndex(images.length - 1) : setIndex(index - 1);
+    currentSlide === 0
+      ? setCurrentSlide(images.length - 1)
+      : setCurrentSlide(currentSlide - 1);
   };
 
   const onTouchStart = (e) => {
@@ -35,23 +39,34 @@ function SlideShow() {
 
   return (
     <div className="slide-show">
-      <ImagesList imgs={images} setImage={setIndex} index={index} />
+      <ImagesList
+        imgs={images}
+        setImage={setCurrentSlide}
+        index={currentSlide}
+      />
       <div className="slide-container">
         <button type="button" className="action-btn" onClick={prev}>
           prev
         </button>
         <div className="image-container">
-          {images.map((image, ind) => (
-              <img
-                key={`slider-${image.id}`}
-                className={`image ${ind === index ? 'shown' : 'hidden'}`}
-                src={image.url}
-                alt={image.title}
-                onTouchStart={onTouchStart}
-                onTouchMove={onTouchMove}
-                onTouchEnd={onTouchEnd}
-              />
+          <div
+            className="image-container-inner"
+            style={{ transform: `translateX(${-currentSlide * 100}%)` }}
+          >
+            {images.map((image, ind) => (
+              <div className="the-image">
+                <img
+                  key={`slider-${image.id}`}
+                  className="image"
+                  src={image.url}
+                  alt={image.title}
+                  onTouchStart={onTouchStart}
+                  onTouchMove={onTouchMove}
+                  onTouchEnd={onTouchEnd}
+                />
+              </div>
             ))}
+          </div>
         </div>
         <button type="button" className="action-btn" onClick={next}>
           next

@@ -1,10 +1,19 @@
+* { 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: #f0f0f0;
+  color:rgb(26, 26, 26);
 }
 
 .container {
   h1 {
     text-align: center;
+    margin-bottom: 2rem;
   }
 }
 
@@ -12,29 +21,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  .images-list {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-    .image-icon {
-      display: grid;
-      justify-items: center;
-
-      img {
-        border-radius: 10%;
-      }
-    }
-  }
+  gap: 2rem;
 
   .slide-container {
     display: flex;
     align-items: center;
     gap: 1rem;
 
-    .action-btn{
-      
+    .action-btn{ 
       background-color: aliceblue;
       border-radius: 50%;
       width: 3rem;
@@ -44,30 +38,46 @@ body {
     }
 
     .action-btn:hover{
-      border: 2px bold orange;
-      background-color: orange;
+      border: 2px bold rgb(255, 123, 0);
+      background-color: rgb(255, 123, 0);
+    }
+  }
+}
+
+.images-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  .image-icon {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+    img {
+      border-radius: 10%;
+    }
+  }
+}
+
+.image-container {
+  margin: auto;
+  overflow: hidden;
+  max-width: 600px;
+  
+
+  .image-container-inner {
+    white-space: nowrap;
+    transition: ease 1s;
+
+    .the-image {
+      display: inline-block;
+      width: 100%;
     }
   }
 }
 
 .active {
-  border: 2px solid brown;
-  transform: scale(1.1);
-}
-
-.shown {
-  display: block;
-  animation: slide 1s;
-}
-
-.hidden {
-  display: none;
-  animation: slide 1s reverse;
-}
-
-.image-container {
-  display: flex;
-  align-items: center;
+  border: 2px solid rgb(78, 78, 78);
+  transform: scale(1.05);
 }
 
 @media screen and (max-width: 1024px){
@@ -76,6 +86,7 @@ body {
 
     .images-list {
       overflow-x: scroll;
+      padding: 0 1rem;
     }
 
     .image {
@@ -86,5 +97,9 @@ body {
     .action-btn {
       display: none;
     }
+  }
+
+  .active {
+    transform: scale(0.95);
   }
 }
